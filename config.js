@@ -1,1 +1,3 @@
-window.CONFIG={BACKEND_URL:''};
+window.LUPO_NERO_CONFIG = {
+  backendUrl: ""
+};
