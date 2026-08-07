@@ -3,7 +3,27 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Montserrat,Arial,sans-serif;background:var(--cream);color:#172016}
 .topbar{height:68px;position:sticky;top:0;z-index:20;background:#0b0d0b;display:flex;align-items:center;justify-content:center;padding:0 4vw}.topbar nav{display:flex;gap:32px}.topbar a{color:#fff;text-decoration:none;font-size:13px;font-weight:800;text-transform:uppercase}.topbar a:hover{color:var(--yellow)}.language{position:absolute;right:4vw;display:flex;gap:8px}.lang{border:1px solid #526653;background:transparent;color:#fff;border-radius:6px;padding:8px 11px;font-weight:800;cursor:pointer}.lang.active{background:var(--green2)}.menu-btn{display:none}
 .hero{min-height:650px;background:linear-gradient(90deg,rgba(5,9,6,.82),rgba(5,9,6,.34) 58%,rgba(5,9,6,.08)),url('./assets/hero-approved.png') center/cover no-repeat;color:#fff;display:flex;align-items:center}.hero-copy{padding:55px 5vw;max-width:860px}.script{font-family:Yellowtail,cursive;color:var(--yellow);font-size:54px;margin:0}.hero h1{font-family:"Bebas Neue",Impact,sans-serif;font-size:102px;line-height:.87;letter-spacing:2px;margin:8px 0 14px}.subline{font-weight:800;letter-spacing:4px;font-size:17px}.date{display:inline-block;background:var(--yellow);color:#111;font-family:"Bebas Neue";font-size:34px;padding:7px 18px}.meta{display:flex;gap:35px;margin:24px 0}.meta p{margin:0;font-size:18px}.meta small{color:var(--yellow);font-weight:800}.cta{display:inline-block;background:var(--green2);border:2px solid #fff;color:#fff;text-decoration:none;border-radius:9px;padding:15px 31px;font-family:"Bebas Neue";font-size:36px}
-.logos{background:#fff;border-bottom:1px solid var(--line)}.logos-grid{max-width:1500px;margin:auto;display:grid;grid-template-columns:repeat(7,1fr);align-items:center;padding:8px 2vw}.logos img{width:auto;height:92px;max-width:155px;object-fit:contain;justify-self:center;margin:18px}
+.logos{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  padding:10px 0;
+}.logos-grid{
+  max-width:1500px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(7,minmax(110px,1fr));
+  align-items:center;
+  gap:24px;
+  padding:10px 4vw;
+}.logos img{
+  display:block;
+  width:100%;
+  height:105px;
+  max-width:155px;
+  object-fit:contain;
+  justify-self:center;
+  margin:0;
+}
 .contact-strip{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 6vw;background:#f7f5ef;border-bottom:1px solid var(--line)}.contact-strip h2,.contact-strip p{margin:4px 0}.contact-strip small{font-weight:800;letter-spacing:1.2px;color:#5d6a5c}.wa-btn,.doc-card a{background:var(--green);color:#fff;text-decoration:none;padding:14px 21px;border-radius:8px;font-weight:800}
 .section{padding:62px 6vw}.section-title{text-align:center;margin-bottom:32px}.section-title>span{font-size:12px;letter-spacing:3px;color:#8a6d00;font-weight:800}.section-title h2{font-family:"Bebas Neue";font-size:46px;letter-spacing:2px;margin:6px 0}.days{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.days article{background:#fff;border-top:7px solid var(--green2);border-radius:13px;padding:25px;box-shadow:0 9px 25px rgba(0,0,0,.05)}.regulations{background:#e9e5dc}.doc-card{max-width:900px;margin:auto;background:#fff;border-radius:14px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .registration{background:#133017;color:#fff;padding:70px 7vw}.section-title.light>span{color:var(--yellow)}.registration form{max-width:1050px;margin:auto;background:#fff;color:#172016;border-radius:18px;padding:30px;box-shadow:0 18px 55px rgba(0,0,0,.25)}.progress{height:8px;background:#e5e4df;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;width:20%;background:var(--yellow);transition:.25s}.steps{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);padding:0;margin:18px 0 30px}.steps li{text-align:center;color:#8b8e86;font-size:12px}.steps b{display:grid;place-items:center;width:31px;height:31px;margin:auto auto 7px;border-radius:50%;background:#ddd}.steps li.active{color:var(--green);font-weight:800}.steps li.active b{background:var(--green);color:#fff}.form-step{display:none}.form-step.active{display:block}.form-step h3{font-family:"Bebas Neue";font-size:34px;color:var(--green);margin-top:0}.subsection{border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px;background:#faf8f3}.subsection h4{margin:0 0 15px;color:var(--green)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.form-grid label,.upload-grid label{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:800}.form-grid small{font-weight:500;color:var(--muted)}.full{grid-column:1/-1}input,select,textarea{width:100%;padding:13px;border:1px solid #c9c5ba;border-radius:8px;font:inherit}textarea{min-height:105px}.check{display:flex!important;gap:10px;align-items:flex-start;margin:14px 0;font-size:13px;font-weight:700}.check input{width:auto;margin-top:3px}.capacity-notice{margin-top:7px;min-height:18px;font-size:12px;font-weight:800}.capacity-notice.available{color:#28672f}.capacity-notice.full{color:#9a6100}.payment-box{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:#f2eee5;padding:18px;border-radius:12px;margin-bottom:20px}.payment-box p{font-size:13px}.upload-grid{display:grid;gap:17px}.helper{font-size:12px;color:#666}.declaration{border:1px solid #d5d0c5;border-radius:10px;margin-bottom:18px;background:#faf8f3}.declaration summary{cursor:pointer;padding:15px;font-weight:800;color:var(--green)}.declaration-body{padding:0 15px 15px;font-size:13px;line-height:1.6}.signature-box{margin:18px 0;padding:16px;border:1px solid #d2cec4;border-radius:10px;background:#fafafa}.signature-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.signature-head button{border:0;background:#ddd;padding:8px 12px;border-radius:6px;cursor:pointer}#signatureCanvas{width:100%;height:180px;background:#fff;border:1px dashed #999;border-radius:7px;touch-action:none}.error{color:#a22;font-size:12px;font-weight:800}.vaccination-box,.email-note{background:#eef5ed;padding:15px;border-radius:10px;margin:18px 0}.summary{background:#f2eee5;border-radius:10px;padding:20px;line-height:1.8}.actions{display:flex;justify-content:space-between;margin-top:28px}.actions button{border:0;border-radius:8px;padding:14px 25px;background:var(--green2);color:#fff;font-weight:800;cursor:pointer}.actions .secondary{background:#ddd;color:#222}.status{text-align:center;color:#626b61;font-size:12px;min-height:18px}
@@ -11,3 +31,52 @@
 footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spacing:3px;font-size:12px}
 @media(max-width:1000px){.logos-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:760px){.topbar{justify-content:flex-start}.menu-btn{display:block;margin-left:14px;background:transparent;border:1px solid #536;color:#fff;border-radius:6px;padding:8px 10px}.topbar nav{display:none;position:absolute;left:0;right:0;top:68px;background:#0b0d0b;flex-direction:column;padding:15px 22px}.topbar nav.open{display:flex}.topbar .language{right:12px}.hero{min-height:600px}.hero-copy{padding:46px 22px}.script{font-size:36px}.hero h1{font-size:56px}.subline{font-size:12px}.date{font-size:25px}.meta,.contact-strip{flex-direction:column;align-items:flex-start}.logos-grid{grid-template-columns:repeat(2,1fr)}.logos img{height:74px;max-width:125px}.days,.form-grid,.payment-box{grid-template-columns:1fr}.full{grid-column:auto}.doc-card{flex-direction:column;align-items:flex-start}.steps span{display:none}.collaboration{justify-content:center}.collab-inner{flex-direction:column;text-align:center}}
+
+/* Rifiniture fascia loghi */
+.logos img[alt="CAPB"]{
+  max-width:145px;
+  height:92px;
+}
+.logos img[alt="Lupo Nero Sheepdog Center"]{
+  max-width:135px;
+  height:94px;
+}
+.logos img[alt="ENCI"],
+.logos img[alt="FCI"]{
+  max-width:130px;
+  height:92px;
+}
+
+/* Piccola rifinitura della fascia contatti */
+.contact-strip{
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+@media(max-width:1000px){
+  .logos-grid{
+    grid-template-columns:repeat(4,minmax(120px,1fr));
+    gap:18px 28px;
+  }
+}
+@media(max-width:760px){
+  .logos{
+    padding:8px 0;
+  }
+  .logos-grid{
+    grid-template-columns:repeat(2,minmax(110px,1fr));
+    gap:16px 22px;
+    padding:12px 24px;
+  }
+  .logos img{
+    height:82px;
+    max-width:135px;
+  }
+  .logos img[alt="CAPB"],
+  .logos img[alt="Lupo Nero Sheepdog Center"],
+  .logos img[alt="ENCI"],
+  .logos img[alt="FCI"]{
+    height:78px;
+    max-width:120px;
+  }
+}
