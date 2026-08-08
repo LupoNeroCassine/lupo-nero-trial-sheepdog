@@ -73,3 +73,46 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
     max-width:120px;
   }
 }
+
+/* === LUPO NERO - HERO FOTO APPROVATA === */
+.hero{
+  min-height:640px !important;
+  background-position:center 46% !important;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
+}
+.hero::before{
+  background:linear-gradient(90deg,
+    rgba(4,10,6,.88) 0%,
+    rgba(4,10,6,.72) 24%,
+    rgba(4,10,6,.38) 43%,
+    rgba(4,10,6,.10) 64%,
+    rgba(4,10,6,.02) 100%) !important;
+}
+.hero-inner{
+  min-height:640px !important;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:46px !important;
+  padding-bottom:46px !important;
+}
+@media(max-width:1100px){
+  .hero{min-height:600px !important;background-position:55% 48% !important;}
+  .hero-inner{min-height:600px !important;}
+}
+@media(max-width:760px){
+  .hero{min-height:690px !important;background-position:58% center !important;}
+  .hero::before{
+    background:linear-gradient(90deg,
+      rgba(4,10,6,.88) 0%,
+      rgba(4,10,6,.70) 58%,
+      rgba(4,10,6,.26) 100%) !important;
+  }
+  .hero-inner{
+    min-height:690px !important;
+    justify-content:flex-end;
+    padding-top:80px !important;
+    padding-bottom:42px !important;
+  }
+}
