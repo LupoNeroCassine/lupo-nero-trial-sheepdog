@@ -577,3 +577,66 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
 .reservation-result.waiting .reservation-copy button{
   background:#9c7800;
 }
+/* === CONFERMA FINALE ISCRIZIONE === */
+
+.final-result{
+  max-width:900px;
+  margin:30px auto;
+  padding:28px;
+  border-radius:16px;
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.final-result.confirmed{
+  background:#edf6ee;
+  border:1px solid #b8d8bb;
+}
+
+.final-result.waiting{
+  background:#fff6dc;
+  border:1px solid #e5c66f;
+}
+
+.final-icon{
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  font-weight:900;
+}
+
+.final-result.confirmed .final-icon{
+  background:#17451d;
+  color:#fff;
+}
+
+.final-result.waiting .final-icon{
+  background:#d3a000;
+  color:#111;
+}
+
+.final-copy h3{
+  margin:0 0 10px;
+  font-size:24px;
+}
+
+.final-copy p{
+  margin:0 0 18px;
+  line-height:1.6;
+}
+
+.final-home-btn{
+  display:inline-block;
+  background:#17451d;
+  color:#fff;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:8px;
+  font-weight:800;
+}
