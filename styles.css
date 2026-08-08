@@ -6,23 +6,24 @@
 .logos{
   background:#fff;
   border-bottom:1px solid var(--line);
-  padding:10px 0;
+  padding:14px 0;
 }.logos-grid{
-  max-width:1500px;
+  max-width:1480px;
   margin:0 auto;
   display:grid;
-  grid-template-columns:repeat(7,minmax(110px,1fr));
+  grid-template-columns:repeat(7,minmax(105px,1fr));
   align-items:center;
-  gap:24px;
-  padding:10px 4vw;
+  justify-items:center;
+  gap:26px;
+  padding:4px 4vw;
 }.logos img{
   display:block;
-  width:100%;
-  height:105px;
-  max-width:155px;
+  width:auto;
+  height:88px;
+  max-width:145px;
   object-fit:contain;
-  justify-self:center;
   margin:0;
+  transition:transform .18s ease, opacity .18s ease;
 }
 .contact-strip{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 6vw;background:#f7f5ef;border-bottom:1px solid var(--line)}.contact-strip h2,.contact-strip p{margin:4px 0}.contact-strip small{font-weight:800;letter-spacing:1.2px;color:#5d6a5c}.wa-btn,.doc-card a{background:var(--green);color:#fff;text-decoration:none;padding:14px 21px;border-radius:8px;font-weight:800}
 .section{padding:62px 6vw}.section-title{text-align:center;margin-bottom:32px}.section-title>span{font-size:12px;letter-spacing:3px;color:#8a6d00;font-weight:800}.section-title h2{font-family:"Bebas Neue";font-size:46px;letter-spacing:2px;margin:6px 0}.days{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.days article{background:#fff;border-top:7px solid var(--green2);border-radius:13px;padding:25px;box-shadow:0 9px 25px rgba(0,0,0,.05)}.regulations{background:#e9e5dc}.doc-card{max-width:900px;margin:auto;background:#fff;border-radius:14px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:25px}
@@ -32,51 +33,43 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
 @media(max-width:1000px){.logos-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:760px){.topbar{justify-content:flex-start}.menu-btn{display:block;margin-left:14px;background:transparent;border:1px solid #536;color:#fff;border-radius:6px;padding:8px 10px}.topbar nav{display:none;position:absolute;left:0;right:0;top:68px;background:#0b0d0b;flex-direction:column;padding:15px 22px}.topbar nav.open{display:flex}.topbar .language{right:12px}.hero{min-height:600px}.hero-copy{padding:46px 22px}.script{font-size:36px}.hero h1{font-size:56px}.subline{font-size:12px}.date{font-size:25px}.meta,.contact-strip{flex-direction:column;align-items:flex-start}.logos-grid{grid-template-columns:repeat(2,1fr)}.logos img{height:74px;max-width:125px}.days,.form-grid,.payment-box{grid-template-columns:1fr}.full{grid-column:auto}.doc-card{flex-direction:column;align-items:flex-start}.steps span{display:none}.collaboration{justify-content:center}.collab-inner{flex-direction:column;text-align:center}}
 
-/* Rifiniture fascia loghi */
-.logos img[alt="CAPB"]{
-  max-width:145px;
-  height:92px;
+/* Fascia loghi definitiva */
+.logos img:hover{
+  transform:translateY(-2px) scale(1.02);
+  opacity:.96;
 }
-.logos img[alt="Lupo Nero Sheepdog Center"]{
-  max-width:135px;
-  height:94px;
-}
-.logos img[alt="ENCI"],
-.logos img[alt="FCI"]{
-  max-width:130px;
-  height:92px;
-}
+.logos img[alt="SIPO"]{height:92px;max-width:150px;}
+.logos img[alt="Italian Border Collie"]{height:88px;max-width:135px;}
+.logos img[alt="SIC"]{height:84px;max-width:135px;}
+.logos img[alt="CAPB"]{height:82px;max-width:140px;}
+.logos img[alt="Lupo Nero Sheepdog Center"]{height:88px;max-width:130px;}
+.logos img[alt="ENCI"]{height:86px;max-width:125px;}
+.logos img[alt="FCI"]{height:86px;max-width:125px;}
 
-/* Piccola rifinitura della fascia contatti */
-.contact-strip{
-  padding-top:30px;
-  padding-bottom:30px;
-}
-
-@media(max-width:1000px){
+@media(max-width:1050px){
   .logos-grid{
     grid-template-columns:repeat(4,minmax(120px,1fr));
-    gap:18px 28px;
+    gap:22px 28px;
   }
 }
 @media(max-width:760px){
   .logos{
-    padding:8px 0;
+    padding:10px 0;
   }
   .logos-grid{
-    grid-template-columns:repeat(2,minmax(110px,1fr));
-    gap:16px 22px;
-    padding:12px 24px;
+    grid-template-columns:repeat(2,minmax(120px,1fr));
+    gap:18px 22px;
+    padding:10px 20px;
   }
-  .logos img{
-    height:82px;
-    max-width:135px;
-  }
+  .logos img,
+  .logos img[alt="SIPO"],
+  .logos img[alt="Italian Border Collie"],
+  .logos img[alt="SIC"],
   .logos img[alt="CAPB"],
   .logos img[alt="Lupo Nero Sheepdog Center"],
   .logos img[alt="ENCI"],
   .logos img[alt="FCI"]{
-    height:78px;
+    height:76px;
     max-width:120px;
   }
 }
