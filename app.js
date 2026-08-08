@@ -1086,13 +1086,8 @@ nextBtn.style.display = 'none';
         );
 
 
-      statusEl.textContent =
-        language === 'it'
-
-          ? `Iscrizione registrata. Codice: ${result.code}. Stato: ${result.status}.`
-
-          : `Entry saved. Code: ${result.code}. Status: ${result.status}.`;
-
+     showFinalResult(result);
+      
 
       alert(
         statusEl.textContent
@@ -1122,7 +1117,78 @@ nextBtn.style.display = 'none';
     }
 
   }
+function showFinalResult(result) {
 
+  let box = document.getElementById('finalResultBox');
+
+  if (!box) {
+    box = document.createElement('div');
+    box.id = 'finalResultBox';
+    box.className = 'final-result';
+    form.after(box);
+  }
+
+  const waiting = result.status === 'LISTA ATTESA';
+
+  box.className = waiting
+    ? 'final-result waiting'
+    : 'final-result confirmed';
+
+  box.innerHTML = waiting
+    ? `
+      <div class="final-icon">!</div>
+
+      <div class="final-copy">
+        <h3>
+          ${language === 'it'
+            ? 'RICHIESTA REGISTRATA'
+            : 'REQUEST REGISTERED'}
+        </h3>
+
+        <p>
+          ${language === 'it'
+            ? `Codice iscrizione: <strong>${result.code}</strong><br>Sei stato inserito in lista d’attesa. Non effettuare alcun pagamento. La Segreteria ti contatterà se si libera un posto.`
+            : `Entry code: <strong>${result.code}</strong><br>You have been added to the waiting list. Do not make any payment. The Secretariat will contact you if a place becomes available.`}
+        </p>
+
+        <a href="#home" class="final-home-btn">
+          ${language === 'it'
+            ? 'TORNA ALLA HOME'
+            : 'BACK TO HOME'}
+        </a>
+      </div>
+    `
+    : `
+      <div class="final-icon">✓</div>
+
+      <div class="final-copy">
+        <h3>
+          ${language === 'it'
+            ? 'ISCRIZIONE COMPLETATA'
+            : 'ENTRY COMPLETED'}
+        </h3>
+
+        <p>
+          ${language === 'it'
+            ? `Codice iscrizione: <strong>${result.code}</strong><br>Stato: <strong>${result.status}</strong><br><br>La tua iscrizione è stata registrata correttamente. La Segreteria ha ricevuto i dati, la firma e la ricevuta del bonifico.`
+            : `Entry code: <strong>${result.code}</strong><br>Status: <strong>${result.status}</strong><br><br>Your entry has been successfully registered. The Secretariat has received the data, signature and bank transfer receipt.`}
+        </p>
+
+        <a href="#home" class="final-home-btn">
+          ${language === 'it'
+            ? 'TORNA ALLA HOME'
+            : 'BACK TO HOME'}
+        </a>
+      </div>
+    `;
+
+  form.style.display = 'none';
+
+  box.scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+  });
+}
 
   setLanguage('it');
   render();
