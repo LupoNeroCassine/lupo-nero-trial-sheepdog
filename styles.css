@@ -505,3 +505,75 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
     padding:20px;
   }
 }
+/* === RISULTATO PRENOTAZIONE === */
+
+.reservation-result{
+  margin-top:18px;
+  padding:18px 20px;
+  border-radius:14px;
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.reservation-result.confirmed{
+  background:#edf6ee;
+  border:1px solid #b8d8bb;
+}
+
+.reservation-result.waiting{
+  background:#fff6dc;
+  border:1px solid #e5c66f;
+}
+
+.reservation-icon{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:20px;
+}
+
+.confirmed .reservation-icon{
+  background:#17451d;
+  color:#fff;
+}
+
+.waiting .reservation-icon{
+  background:#d3a000;
+  color:#111;
+}
+
+.reservation-copy{
+  flex:1;
+}
+
+.reservation-copy strong{
+  display:block;
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.reservation-copy p{
+  margin:0 0 14px;
+  line-height:1.55;
+  font-size:13px;
+}
+
+.reservation-copy button{
+  border:0;
+  background:#17451d;
+  color:#fff;
+  padding:11px 16px;
+  border-radius:8px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.reservation-result.waiting .reservation-copy button{
+  background:#9c7800;
+}
