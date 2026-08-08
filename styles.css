@@ -185,3 +185,55 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
     padding-bottom:44px !important;
   }
 }
+/* === HERO DEFINITIVA RICAVATA DALLA LOCANDINA ORIGINALE === */
+.hero{
+  width:100% !important;
+  min-height:650px !important;
+  margin:0 !important;
+  background-image:
+    linear-gradient(90deg,
+      rgba(4,10,6,.72) 0%,
+      rgba(4,10,6,.34) 32%,
+      rgba(4,10,6,.08) 55%,
+      rgba(4,10,6,0) 78%),
+    url('./assets/hero-originale.jpg') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+  background-color:#0b0f0b !important;
+}
+
+.hero::before{
+  background:none !important;
+}
+
+.hero-inner{
+  min-height:650px !important;
+  justify-content:center !important;
+  padding-top:48px !important;
+  padding-bottom:48px !important;
+}
+
+@media(max-width:1100px){
+  .hero{
+    min-height:620px !important;
+    background-position:53% center !important;
+  }
+  .hero-inner{
+    min-height:620px !important;
+  }
+}
+
+@media(max-width:760px){
+  .hero{
+    min-height:700px !important;
+    background-size:auto 100% !important;
+    background-position:58% center !important;
+  }
+  .hero-inner{
+    min-height:700px !important;
+    justify-content:flex-end !important;
+    padding-top:90px !important;
+    padding-bottom:44px !important;
+  }
+}
