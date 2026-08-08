@@ -116,3 +116,72 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
     padding-bottom:42px !important;
   }
 }
+/* Hero a tutta larghezza */
+.hero{
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc(50% - 50vw) !important;
+  margin-right:calc(50% - 50vw) !important;
+
+  min-height:660px !important;
+
+  /* meno zoom e inquadratura leggermente più bassa */
+  background-size:contain !important;
+  background-position:center 58% !important;
+  background-repeat:no-repeat !important;
+
+  /* fondo scuro per eventuali bande residue */
+  background-color:#0b0f0b !important;
+}
+
+/* Mantiene leggibile il testo a sinistra */
+.hero::before{
+  background:
+    linear-gradient(90deg,
+      rgba(4,10,6,.90) 0%,
+      rgba(4,10,6,.74) 25%,
+      rgba(4,10,6,.42) 45%,
+      rgba(4,10,6,.12) 65%,
+      rgba(4,10,6,.00) 100%) !important;
+}
+
+.hero-inner{
+  min-height:660px !important;
+  justify-content:center !important;
+  padding-top:48px !important;
+  padding-bottom:48px !important;
+}
+
+/* Tablet */
+@media(max-width:1100px){
+  .hero{
+    min-height:620px !important;
+    background-size:cover !important;
+    background-position:56% 56% !important;
+  }
+  .hero-inner{
+    min-height:620px !important;
+  }
+}
+
+/* Smartphone */
+@media(max-width:760px){
+  .hero{
+    min-height:700px !important;
+    background-size:cover !important;
+    background-position:60% 58% !important;
+  }
+  .hero::before{
+    background:
+      linear-gradient(90deg,
+        rgba(4,10,6,.90) 0%,
+        rgba(4,10,6,.72) 60%,
+        rgba(4,10,6,.28) 100%) !important;
+  }
+  .hero-inner{
+    min-height:700px !important;
+    justify-content:flex-end !important;
+    padding-top:90px !important;
+    padding-bottom:44px !important;
+  }
+}
