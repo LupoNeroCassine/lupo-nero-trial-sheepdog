@@ -679,11 +679,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.classList.add('loading');
 
 
-    statusEl.textContent =
-      language === 'it'
-        ? 'Verifica disponibilità e prenotazione del posto...'
-        : 'Checking availability and reserving place...';
-
+   statusEl.textContent = '';
 
     nextBtn.disabled = true;
 
@@ -837,7 +833,7 @@ function showReservationResult(result) {
 
 
   continueBtn.onclick = () => {
-
+nextBtn.style.display = '';
     currentStep = 4;
 
     render();
@@ -856,7 +852,7 @@ function showReservationResult(result) {
     block:'center'
   });
 }
-
+nextBtn.style.display = 'none';
   /* =========================
      NAVIGAZIONE
   ========================= */
