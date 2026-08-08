@@ -263,11 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
       );
 
 
-      capacityNotice.textContent =
-        language === 'it'
-          ? 'POSTO RISERVATO – PROCEDI CON IL PAGAMENTO'
-          : 'PLACE RESERVED – PROCEED WITH PAYMENT';
-
+     capacityNotice.textContent = '';
 
       receipt.required = true;
 
