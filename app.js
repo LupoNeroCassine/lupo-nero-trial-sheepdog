@@ -501,6 +501,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function render() {
 
+  nextBtn.style.display = '';
+    
     formSteps.forEach(step => {
 
       step.classList.toggle(
