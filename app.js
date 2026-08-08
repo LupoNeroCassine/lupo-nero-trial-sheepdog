@@ -737,23 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : 'Place reserved for 30 minutes. Proceed with payment and upload the receipt.';
 
       }
-
-
-      alert(statusEl.textContent);
-
-
-      currentStep = 4;
-
-      render();
-
-
-      document
-        .getElementById(
-          'registration'
-        )
-        .scrollIntoView({
-          behavior:'smooth'
-        });
+showReservationResult(result);
 
     }
 
@@ -777,7 +761,105 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
   }
+function showReservationResult(result) {
 
+  let box = document.getElementById('reservationResultBox');
+
+  if (!box) {
+    box = document.createElement('div');
+    box.id = 'reservationResultBox';
+
+    classSelect
+      .closest('label')
+      .after(box);
+  }
+
+  box.innerHTML = '';
+
+  if (reservationWaiting) {
+
+    box.className = 'reservation-result waiting';
+
+    box.innerHTML = `
+      <div class="reservation-icon">!</div>
+
+      <div class="reservation-copy">
+        <strong>
+          ${language === 'it'
+            ? 'ISCRIZIONE IN LISTA D’ATTESA'
+            : 'ENTRY ON WAITING LIST'}
+        </strong>
+
+        <p>
+          ${language === 'it'
+            ? `La classe selezionata è completa. Sei stato inserito in lista d’attesa${result.waitingPosition ? ` in posizione ${result.waitingPosition}` : ''}. Non effettuare il bonifico.`
+            : `The selected class is full. You have been added to the waiting list${result.waitingPosition ? ` in position ${result.waitingPosition}` : ''}. Do not make the payment.`}
+        </p>
+
+        <button type="button" id="continueAfterReservation">
+          ${language === 'it'
+            ? 'PROSEGUI →'
+            : 'CONTINUE →'}
+        </button>
+      </div>
+    `;
+
+  } else {
+
+    box.className = 'reservation-result confirmed';
+
+    box.innerHTML = `
+      <div class="reservation-icon">✓</div>
+
+      <div class="reservation-copy">
+        <strong>
+          ${language === 'it'
+            ? 'POSTO RISERVATO'
+            : 'PLACE RESERVED'}
+        </strong>
+
+        <p>
+          ${language === 'it'
+            ? 'Il posto è riservato per 30 minuti. Procedi con il pagamento e allega obbligatoriamente la ricevuta del bonifico.'
+            : 'Your place is reserved for 30 minutes. Proceed with payment and upload the bank transfer receipt.'}
+        </p>
+
+        <button type="button" id="continueAfterReservation">
+          ${language === 'it'
+            ? 'PROCEDI AI DOCUMENTI →'
+            : 'PROCEED TO DOCUMENTS →'}
+        </button>
+      </div>
+    `;
+  }
+
+
+  const continueBtn =
+    document.getElementById(
+      'continueAfterReservation'
+    );
+
+
+  continueBtn.onclick = () => {
+
+    currentStep = 4;
+
+    render();
+
+    document
+      .getElementById('registration')
+      .scrollIntoView({
+        behavior:'smooth'
+      });
+
+  };
+
+
+  box.scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+  });
+}
 
   /* =========================
      NAVIGAZIONE
