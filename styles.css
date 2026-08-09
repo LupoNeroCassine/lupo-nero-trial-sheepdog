@@ -658,3 +658,48 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
 .final-result.waiting .final-copy h3{
   color:#8a6700;
 }
+/* === AZIONI SCHERMATA FINALE === */
+
+.final-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+
+.another-dog-btn{
+  border:0;
+  background:#17451d;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:8px;
+  font-family:Montserrat,Arial,sans-serif;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.another-dog-btn:hover{
+  background:#28672f;
+}
+
+.final-home-btn{
+  background:#e3e3e3;
+  color:#222;
+}
+
+.final-home-btn:hover{
+  background:#d5d5d5;
+}
+
+@media(max-width:600px){
+  .final-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .another-dog-btn,
+  .final-home-btn{
+    width:100%;
+    text-align:center;
+  }
+}
