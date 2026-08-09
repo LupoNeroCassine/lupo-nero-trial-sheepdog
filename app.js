@@ -490,7 +490,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+/* =========================
+   CONTROLLO ETA' MINIMA CANE
+========================= */
 
+if (currentStep === 3) {
+
+  const trialClass =
+    form.elements.trialClass.value;
+
+  const dobValue =
+    form.elements.dob.value;
+
+  if (dobValue) {
+
+    const birthDate =
+      new Date(dobValue + 'T00:00:00');
+
+    let trialDate = null;
+    let minimumMonths = null;
+
+    /* HWT TS - minimo 12 mesi */
+    if (trialClass === 'HWT TS – 24/10/2026') {
+      trialDate = new Date('2026-10-24T00:00:00');
+      minimumMonths = 12;
+    }
+
+    /* NHAT - minimo 9 mesi */
+    if (trialClass === 'NHAT – 25/10/2026') {
+      trialDate = new Date('2026-10-25T00:00:00');
+      minimumMonths = 9;
+    }
+
+    if (trialDate && minimumMonths) {
+
+      const minimumBirthDate =
+        new Date(
+          trialDate.getFullYear(),
+          trialDate.getMonth() - minimumMonths,
+          trialDate.getDate()
+        );
+
+      if (birthDate > minimumBirthDate) {
+
+        const message =
+          language === 'it'
+            ? (
+                trialClass.startsWith('NHAT')
+                  ? 'Per partecipare al NHAT il cane deve aver compiuto almeno 9 mesi alla data della prova (25/10/2026).'
+                  : 'Per partecipare all’HWT TS il cane deve aver compiuto almeno 12 mesi alla data della prova (24/10/2026).'
+              )
+            : (
+                trialClass.startsWith('NHAT')
+                  ? 'The dog must be at least 9 months old on the NHAT trial date (25/10/2026).'
+                  : 'The dog must be at least 12 months old on the HWT TS trial date (24/10/2026).'
+              );
+
+        alert(message);
+
+        classSelect.focus();
+
+        return false;
+      }
+    }
+  }
+}
     return true;
   }
 
