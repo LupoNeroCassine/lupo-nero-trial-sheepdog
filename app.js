@@ -854,7 +854,6 @@ nextBtn.style.display = '';
     block:'center'
   });
 }
-nextBtn.style.display = 'none';
   /* =========================
      NAVIGAZIONE
   ========================= */
