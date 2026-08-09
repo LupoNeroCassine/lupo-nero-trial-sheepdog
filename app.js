@@ -1088,12 +1088,8 @@ nextBtn.style.display = '';
 
 
      showFinalResult(result);
-      
-
-      alert(
-        statusEl.textContent
-      );
-
+     
+     
     }
 
     catch (error) {
