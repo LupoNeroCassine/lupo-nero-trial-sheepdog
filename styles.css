@@ -632,6 +632,15 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
 }
 
 .final-home-btn{
+  display:inline-block;
+  background:#17451d;
+  color:#fff;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:8px;
+  font-weight:800;
+}
+
 /* === CORREZIONE TESTO CONFERMA FINALE === */
 
 .final-result{
@@ -648,12 +657,4 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
 
 .final-result.waiting .final-copy h3{
   color:#8a6700;
-}
-  display:inline-block;
-  background:#17451d;
-  color:#fff;
-  text-decoration:none;
-  padding:12px 18px;
-  border-radius:8px;
-  font-weight:800;
 }
