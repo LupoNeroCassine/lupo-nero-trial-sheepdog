@@ -1338,14 +1338,33 @@ function startAnotherDog() {
             : `Entry code: <strong>${result.code}</strong><br>Status: <strong>${result.status}</strong><br><br>Your entry has been successfully registered. The Secretariat has received the data, signature and bank transfer receipt.`}
         </p>
 
-        <a href="#home" class="final-home-btn">
-          ${language === 'it'
-            ? 'TORNA ALLA HOME'
-            : 'BACK TO HOME'}
-        </a>
+       <div class="final-actions">
+
+  <button
+    type="button"
+    id="anotherDogBtn"
+    class="another-dog-btn"
+  >
+    ${language === 'it'
+      ? 'ISCRIVI UN ALTRO CANE →'
+      : 'ENTER ANOTHER DOG →'}
+  </button>
+
+  <a href="#home" class="final-home-btn">
+    ${language === 'it'
+      ? 'TORNA ALLA HOME'
+      : 'BACK TO HOME'}
+  </a>
+
+</div>
       </div>
     `;
+const anotherDogBtn =
+  document.getElementById('anotherDogBtn');
 
+if (anotherDogBtn) {
+  anotherDogBtn.onclick = startAnotherDog;
+}
   form.style.display = 'none';
 
   box.scrollIntoView({
