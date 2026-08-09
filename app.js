@@ -1114,7 +1114,160 @@ nextBtn.style.display = '';
     }
 
   }
-function showFinalResult(result) {
+function startAnotherDog() {
+
+  /* Conserviamo i dati anagrafici dello Step 1 */
+  const preservedFields = [];
+
+  document
+    .querySelectorAll(
+      '.form-step[data-step="1"] input, ' +
+      '.form-step[data-step="1"] select, ' +
+      '.form-step[data-step="1"] textarea'
+    )
+    .forEach(el => {
+
+      if (el.type === 'file') return;
+
+      preservedFields.push({
+        element: el,
+        value: el.value,
+        checked: el.checked
+      });
+
+    });
+
+
+  /* Conserviamo anche affiliazione, club e tessera
+     dello Step 3, ma NON la classe della nuova prova */
+  document
+    .querySelectorAll(
+      '.form-step[data-step="3"] input, ' +
+      '.form-step[data-step="3"] select'
+    )
+    .forEach(el => {
+
+      if (
+        el.type === 'file' ||
+        el.name === 'trialClass'
+      ) {
+        return;
+      }
+
+      preservedFields.push({
+        element: el,
+        value: el.value,
+        checked: el.checked
+      });
+
+    });
+
+
+  /* Azzera l'iscrizione precedente */
+  form.reset();
+
+
+  /* Ripristina i dati della persona */
+  preservedFields.forEach(item => {
+
+    if (
+      item.element.type === 'checkbox' ||
+      item.element.type === 'radio'
+    ) {
+      item.element.checked = item.checked;
+    }
+    else {
+      item.element.value = item.value;
+    }
+
+  });
+
+
+  /* Azzera completamente la vecchia prenotazione */
+  reservationMade = false;
+  reservationCode = '';
+  reservationWaiting = false;
+  reservedClass = '';
+
+  hasSignature = false;
+  drawing = false;
+
+
+  /* Cancella la firma precedente */
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+
+  /* Ripristina pagamento e ricevuta */
+  receipt.required = false;
+  receipt.value = '';
+
+  if (paymentBox) {
+    paymentBox.style.display = '';
+  }
+
+  if (receiptLabel) {
+    receiptLabel.style.display = '';
+  }
+
+
+  /* Pulisce messaggi */
+  statusEl.textContent = '';
+  capacityNotice.textContent = '';
+  receiptHelp.textContent = '';
+
+  const signatureError =
+    document.getElementById('signatureError');
+
+  if (signatureError) {
+    signatureError.textContent = '';
+  }
+
+
+  /* Elimina eventuale box prenotazione precedente */
+  const reservationBox =
+    document.getElementById('reservationResultBox');
+
+  if (reservationBox) {
+    reservationBox.remove();
+  }
+
+
+  /* Riporta visibile il modulo */
+  form.style.display = '';
+
+
+  /* Elimina la schermata finale */
+  const finalBox =
+    document.getElementById('finalResultBox');
+
+  if (finalBox) {
+    finalBox.remove();
+  }
+
+
+  /* Sincronizza proprietario / conduttore */
+  syncHandler();
+
+
+  /* Ripartiamo direttamente dal nuovo cane */
+  currentStep = 2;
+
+  updateReservationMessage();
+  render();
+
+
+  document
+    .getElementById('registration')
+    .scrollIntoView({
+      behavior: 'smooth'
+    });
+}
+  function showFinalResult(result) {
 
   let box = document.getElementById('finalResultBox');
 
@@ -1148,11 +1301,25 @@ function showFinalResult(result) {
             : `Entry code: <strong>${result.code}</strong><br>You have been added to the waiting list. Do not make any payment. The Secretariat will contact you if a place becomes available.`}
         </p>
 
-        <a href="#home" class="final-home-btn">
-          ${language === 'it'
-            ? 'TORNA ALLA HOME'
-            : 'BACK TO HOME'}
-        </a>
+      <div class="final-actions">
+
+  <button
+    type="button"
+    id="anotherDogBtn"
+    class="another-dog-btn"
+  >
+    ${language === 'it'
+      ? 'ISCRIVI UN ALTRO CANE →'
+      : 'ENTER ANOTHER DOG →'}
+  </button>
+
+  <a href="#home" class="final-home-btn">
+    ${language === 'it'
+      ? 'TORNA ALLA HOME'
+      : 'BACK TO HOME'}
+  </a>
+
+</div>
       </div>
     `
     : `
