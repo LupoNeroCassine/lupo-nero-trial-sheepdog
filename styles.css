@@ -703,3 +703,122 @@ footer{background:#0a0d0a;color:#fff;text-align:center;padding:22px;letter-spaci
     text-align:center;
   }
 }
+
+/* === HERO INFO V2: LOCATION, GIUDICE, SCADENZA === */
+.hero-meta-v2{
+  display:grid;
+  grid-template-columns:minmax(260px,1.35fr) minmax(190px,.8fr);
+  gap:12px;
+  max-width:720px;
+  margin:24px 0 22px;
+}
+
+.hero-info-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:4px;
+  min-height:86px;
+  padding:13px 15px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:10px;
+  background:rgba(5,12,7,.48);
+  backdrop-filter:blur(3px);
+}
+
+.hero-info-card small{
+  color:var(--yellow);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.4px;
+}
+
+.hero-info-card strong{
+  color:#fff;
+  font-size:15px;
+  line-height:1.25;
+}
+
+.hero-info-card span{
+  color:#edf2ed;
+  font-size:12px;
+  line-height:1.4;
+}
+
+.deadline-card{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  column-gap:14px;
+  min-height:64px;
+  background:rgba(241,186,0,.94);
+  border-color:#f6d260;
+}
+
+.deadline-card small{
+  color:#282000;
+}
+
+.deadline-card strong{
+  color:#111;
+  font-family:"Bebas Neue",Impact,sans-serif;
+  font-size:24px;
+  letter-spacing:.6px;
+}
+
+.registration-deadline{
+  width:min(760px,100%);
+  margin:14px auto 0;
+  padding:12px 16px;
+  border:2px solid var(--yellow);
+  border-radius:10px;
+  background:#fff7da;
+  color:#302500;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  box-shadow:0 8px 22px rgba(0,0,0,.09);
+}
+
+.registration-deadline span{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.2px;
+}
+
+.registration-deadline strong{
+  font-family:"Bebas Neue",Impact,sans-serif;
+  font-size:22px;
+  letter-spacing:.5px;
+}
+
+@media(max-width:760px){
+  .hero-meta-v2{
+    grid-template-columns:1fr;
+    max-width:100%;
+  }
+
+  .deadline-card{
+    grid-column:auto;
+    grid-template-columns:1fr;
+    row-gap:3px;
+  }
+
+  .deadline-card strong{
+    font-size:22px;
+  }
+
+  .hero-info-card{
+    min-height:auto;
+  }
+
+  .registration-deadline{
+    align-items:flex-start;
+    text-align:center;
+    flex-direction:column;
+  }
+}
+
